@@ -20,11 +20,20 @@ def main():
 
 
 
-    # Solve the puzzle in the background
-    print("Solving the puzzle...")
+    # Solve with BFS
+    print("Solving the puzzle with BFS...")
     solver = Solver(initial_state)
-    solver.solve()
+    solver.solve_with_bfs()
 
+    # Solve with DFS
+    print("\nSolving the puzzle with DFS...")
+    solver.solve_with_dfs()
+    
+    
+    
+    
+    
+    
     # Start the GUI event loop
     root.mainloop()
 
