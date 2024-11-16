@@ -10,10 +10,15 @@ def main():
     # Create the initial state using its default initialization
     initial_state = State()
 
+
+
     # Initialize and start the GUI
     game = Game(root)
     game.state = initial_state  # Sync the game GUI with the initial state
-    game.draw_board()  # Draw the initial board
+    game.draw_board()  
+
+
+
 
     # Solve the puzzle in the background
     print("Solving the puzzle...")
