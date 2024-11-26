@@ -62,11 +62,11 @@ class Game:
             self.draw_board()
 
             # Print possible next states for debugging
-            print(f"\nNext possible states after moving {event.keysym}:")
-            print("For 'B':")
-            self.state.get_next_states("B")
-            print("For 'R':")
-            self.state.get_next_states("R")
+            # print(f"\nNext possible states after moving {event.keysym}:")
+            # print("For 'B':")
+            # self.state.get_next_states()
+            # print("For 'R':")
+            # self.state.get_next_states()
 
             # Check if the game is won and display a message if so
             if self.state.is_final_state():

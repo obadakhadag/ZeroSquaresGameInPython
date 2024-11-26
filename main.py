@@ -10,23 +10,42 @@ def main():
     # Create the initial state using its default initialization
     initial_state = State()
 
+
+
     # Initialize and start the GUI
     game = Game(root)
-    game.state = initial_state  # Sync the game GUI with the initial state
+    game.state = initial_state  
     game.draw_board()
 
-    # Solve with BFS
-    print("Solving the puzzle with BFS...")
+
+
+    # # Solve with BFS
+    # print("Solving the puzzle with BFS...")
     solver = Solver(initial_state)
     solver.solve_with_bfs()
 
-    # Solve with DFS
+
+
+
+
+
+    # # Solve with DFS Recursive
     print("\nSolving the puzzle with DFS...")
     solver.solve_with_dfs_recursive()
 
-    # # Solve with UCS
-    # print("\nSolving the puzzle with UCS...")
-    # solver.solve_with_ucs()
+
+
+
+
+
+
+
+#   # Solve with UCS
+    print("\nSolving the puzzle with UCS...")
+    solver.solve_with_ucs()
+
+
+
 
     # Start the GUI event loop
     root.mainloop()

@@ -94,5 +94,7 @@ class State:
                     print(".", end=" ")
             print()
 
-
+    def __lt__(self, other):
+        # This can be a dummy comparison, as UCS uses cost for priority.
+        return False
 
