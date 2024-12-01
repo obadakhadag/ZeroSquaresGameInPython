@@ -132,42 +132,42 @@ class Solver:
         
         
         
-    # def solve_with_a_star(self):
+    def solve_with_a_star(self):
         
-    #     priority_queue = []
-    #     initial_heuristic = self.initial_state.calculate_heuristic()
-    #     heapq.heappush(priority_queue, (initial_heuristic, 0, self.initial_state, []))  # (f = g + h, g, state, path)
-    #     visited = []
+        priority_queue = []
+        initial_heuristic = self.initial_state.calculate_heuristic()
+        heapq.heappush(priority_queue, (initial_heuristic, 0, self.initial_state, []))  # (f = g + h, g, state, path)
+        visited = []
 
-    #     while priority_queue:
-    #         _, g, current_state, path = heapq.heappop(priority_queue)
+        while priority_queue:
+            _, g, current_state, path = heapq.heappop(priority_queue)
 
-    #         # Skip already visited states
-    #         if any(not current_state.NotEqualState(state) for state in visited):
-    #             continue
+            # Skip already visited states
+            if any(not current_state.NotEqualState(state) for state in visited):
+                continue
 
-    #         visited.append(current_state)
+            visited.append(current_state)
 
-    #         # Check if the goal state is reached
-    #         if current_state.is_final_state():
-    #             print("Solution found using A*!")
-    #             for step, state in enumerate(path + [current_state]):
-    #                 heuristic_value = state.calculate_heuristic()
-    #                 print(f"Step {step} (Heuristic: {heuristic_value}):")
-    #                 state.print_board()
-    #                 print()
+            # Check if the goal state is reached
+            if current_state.is_final_state():
+                print("Solution found using A*!")
+                for step, state in enumerate(path + [current_state]):
+                    heuristic_value = state.calculate_heuristic()
+                    print(f"Step {step} (Heuristic: {heuristic_value}):")
+                    state.print_board()
+                    print()
 
-    #             # Print final details
-    #             final_heuristic = current_state.calculate_heuristic()
-    #             print(f"Final heuristic value: {final_heuristic}")
-    #             print(f"Total cost (steps): {g}")
-    #             print(f"Total number of visited boards: {len(visited)}")
-    #             return
+                # Print final details
+                final_heuristic = current_state.calculate_heuristic()
+                print(f"Final heuristic value: {final_heuristic}")
+                print(f"Total cost (steps): {g}")
+                print(f"Total number of visited boards: {len(visited)}")
+                return
 
-    #         # Expand neighbors
-    #         for next_state in current_state.get_next_states():
-    #             heuristic = next_state.calculate_heuristic()
-    #             heapq.heappush(priority_queue, (g + 1 + heuristic, g + 1, next_state, path + [current_state]))
+            # Expand neighbors
+            for next_state in current_state.get_next_states():
+                heuristic = next_state.calculate_heuristic()
+                heapq.heappush(priority_queue, (g + 1 + heuristic, g + 1, next_state, path + [current_state]))
 
-    #     print("No solution found using A*.")
-    #     print(f"Total number of visited boards: {len(visited)}")
+        print("No solution found using A*.")
+        print(f"Total number of visited boards: {len(visited)}")

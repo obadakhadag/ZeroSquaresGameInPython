@@ -107,11 +107,20 @@ class State:
     
     
     def calculate_heuristic(self):
-       
-        distance_sum = 0
+    
+        total_distance = 0  # Sum of Manhattan distances for all pieces
+        # penalty = 0         # Additional penalty for misalignments or obstacles
+
         for color, position in self.positions.items():
             target = self.targets[color]
-            distance_sum += abs(position[0] - target[0]) + abs(position[1] - target[1])
+        # Manhattan distance
+            manhattan_distance = abs(position[0] - target[0]) + abs(position[1] - target[1])
+            total_distance += manhattan_distance
 
-        reached_weight = sum(self.targets_reached.values()) * 100
-        return distance_sum - reached_weight
+        
+
+    # Combine total distance 
+        heuristic_value = total_distance 
+        return heuristic_value
+
+    
