@@ -95,6 +95,23 @@ class State:
             print()
 
     def __lt__(self, other):
-        # This can be a dummy comparison, as UCS uses cost for priority.
+        
         return False
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    def calculate_heuristic(self):
+       
+        distance_sum = 0
+        for color, position in self.positions.items():
+            target = self.targets[color]
+            distance_sum += abs(position[0] - target[0]) + abs(position[1] - target[1])
 
+        reached_weight = sum(self.targets_reached.values()) * 100
+        return distance_sum - reached_weight

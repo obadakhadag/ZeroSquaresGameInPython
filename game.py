@@ -68,6 +68,8 @@ class Game:
             # print("For 'R':")
             # self.state.get_next_states()
 
+
+
             # Check if the game is won and display a message if so
             if self.state.is_final_state():
                 print("Game completed! Final state reached.")
